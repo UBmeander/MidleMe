@@ -1,0 +1,25 @@
+<%= title "MidleMe" %>
+
+<p>
+  <strong>Location:</strong>
+  <%= @midleme.location_id %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @midleme.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @midleme.longitude %>
+</p>
+
+<h3>Nearby Spots</h3>
+<ul>
+	<% for location_id in @location.nearbys(5) %>
+	<li><%= link_to location.address, location %> (<%= location.distance.round(1) %> miles)</li>
+</ul>
+
+<%= link_to 'Edit', edit_midleme_path(@midleme) %> |
+<%= link_to 'Back', midlemes_path %>

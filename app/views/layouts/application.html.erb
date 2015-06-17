@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MidleMe</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Oe5BxrdlkIkt2m_iH_gOM0WZGYNlWxY">
+  </script>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
+
