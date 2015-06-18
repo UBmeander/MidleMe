@@ -1,5 +1,6 @@
-<%= title "Location, Location, Location" %>
+<p id="notice"><%= notice %></p>
 
+<h2>Locations, Locations, Locations</h2>
 <h1>Listing Locations</h1>
 
 <table>
@@ -15,6 +16,7 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
+        <td><%= location.address %></td>
         <td><%= location.city %></td>
         <td><%= location.state %></td>
         <td><%= location.country %></td>

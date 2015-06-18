@@ -1,9 +1,10 @@
 class Location < ActiveRecord::Base
+	
 	belongs_to :user
-	has_many :midlemes
+	belongs_to :midleme
 
 	# app/models/location.rb
-	geocoded_by :address
+	geocoded_by :address, :city, :state, :country
 	after_validation :geocode, :if => address_changed
 
 	# app/models/location.rb

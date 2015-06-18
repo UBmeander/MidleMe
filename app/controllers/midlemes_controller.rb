@@ -1,6 +1,14 @@
 class MidlemesController < ApplicationController
   before_action :set_midleme, only: [:show, :edit, :update, :destroy]
 
+  def index
+    if params[:search].present?
+      @locations = Location.near(params[:search], 20, :order => :distance)
+    else
+      @locations = Location.all
+    end
+  end
+
   # GET /midlemes
   # GET /midlemes.json
   def index
